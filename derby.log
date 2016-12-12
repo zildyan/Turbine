@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Tue Dec 13 23:33:06 CET 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0158-fa51-5f2c-000003a86ff8 
+on database directory memory:F:\Projects\Turbine\demodb with class loader sun.misc.Launcher$AppClassLoader@27bc2616 
+Loaded from file:/C:/Users/zildyan/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.12.1.1/75070c744a8e52a7d17b8b476468580309d5cd09/derby-10.12.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_45-b15
+account.dir=F:\Projects\Turbine
+os.name=Windows 8.1
+os.arch=amd64
+os.version=6.3
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
