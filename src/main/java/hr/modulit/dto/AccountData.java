@@ -10,7 +10,11 @@ import javax.validation.constraints.NotNull;
 @Data
 @NoArgsConstructor
 @PasswordMatches
-public class UserData {
+public class AccountData {
+
+    @NotNull
+    @NotEmpty
+    private boolean isCompanyAccount;
 
     @NotNull
     @NotEmpty

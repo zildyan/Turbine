@@ -1,7 +1,7 @@
 package hr.modulit.persistence.repos;
 
 import hr.modulit.persistence.models.Account;
-import hr.modulit.persistence.models.VerificationToken;
+import hr.modulit.persistence.models.Token;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -11,17 +11,17 @@ import java.util.Date;
 import java.util.stream.Stream;
 
 @Repository
-public interface VerificationTokenRepository extends JpaRepository<VerificationToken, Long> {
+public interface TokenRepository extends JpaRepository<Token, Long> {
 
-    VerificationToken findByToken(String token);
+    Token findByToken(String token);
 
-    VerificationToken findByAccount(Account account);
+    Token findByAccount(Account account);
 
-    Stream<VerificationToken> findAllByExpiryDateLessThan(Date now);
+    Stream<Token> findAllByExpiryDateLessThan(Date now);
 
     void deleteByExpiryDateLessThan(Date now);
 
     @Modifying
-    @Query("delete from VerificationToken t where t.expiryDate <= ?1")
+    @Query("delete from Token t where t.expiryDate <= ?1")
     void deleteAllExpiredSince(Date now);
 }

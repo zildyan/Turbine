@@ -1,6 +1,6 @@
 package hr.modulit.validation;
 
-import hr.modulit.dto.UserData;
+import hr.modulit.dto.AccountData;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
@@ -13,7 +13,7 @@ public class PasswordMatchesValidator implements ConstraintValidator<PasswordMat
 
     @Override
     public boolean isValid(Object obj, ConstraintValidatorContext context){
-        UserData userData = (UserData) obj;
-        return userData.getPassword().equals(userData.getMatchingPassword());
+        AccountData accountData = (AccountData) obj;
+        return accountData.getPassword().equals(accountData.getMatchingPassword());
     }
 }

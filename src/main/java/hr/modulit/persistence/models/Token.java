@@ -10,7 +10,7 @@ import java.util.Date;
 @Entity
 @Data
 @NoArgsConstructor
-public class VerificationToken {
+public class Token {
 
     private static final int EXPIRATION = 60 * 24;
 
@@ -21,21 +21,20 @@ public class VerificationToken {
     private String token;
 
     @OneToOne(targetEntity = Account.class, fetch = FetchType.EAGER)
-    @JoinColumn(nullable = false, name = "ACCOUNT_ID", foreignKey = @ForeignKey(name = "VERIFY_ACCOUNT"))
+    @JoinColumn(nullable = false, name = "ACCOUNT_ID")
     private Account account;
 
     private Date expiryDate;
 
-    public VerificationToken(final String token) {
+    public Token(final String token) {
         this.token = token;
         this.expiryDate = calculateExpiryDate(EXPIRATION);
     }
 
-    public VerificationToken(final String token, final Account account) {
+    public Token(final String token, final Account account) {
         this(token);
         this.account = account;
     }
-
 
     private Date calculateExpiryDate(final int expiryTimeInMinutes) {
         final Calendar cal = Calendar.getInstance();
